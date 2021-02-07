@@ -4170,13 +4170,23 @@ input[type="button"].btn-block {
 }
 
 .navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  white-space: nowrap;
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 1.5s;
+}
+
+@keyframes example {
+  0%   { left:0px; top:0px;} 
+  50%  { left:0px; top:0px; transform: rotate(180deg)}
+  100% { left:0px; top:0px;}
 }
 
 .navbar-brand:hover, .navbar-brand:focus {
