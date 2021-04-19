@@ -15,5 +15,7 @@ namespace BookStore.DataAccess.Data
         }
 
         public DbSet<Category> Categories { set; get; }
-    }
+        public DbSet<Product> Products { set; get; }
+        public DbSet<ApplicationUsers> ApplicationUsers{ set; get; }
+    } 
 }

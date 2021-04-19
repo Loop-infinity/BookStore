@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace Bookstore.DataAccess.Repository.IRepository
 {
     public interface IRepository<T> where T :class
     {

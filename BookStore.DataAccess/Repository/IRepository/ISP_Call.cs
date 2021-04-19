@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace BookStore.DataAccess.Repository.IRepository
 {
     public interface ISP_Call : IDisposable
     {

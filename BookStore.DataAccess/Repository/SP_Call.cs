@@ -1,5 +1,5 @@
-﻿using BulkyBook.DataAccess.Data;
-using BulkyBook.DataAccess.Repository.IRepository;
+﻿using BookStore.DataAccess.Data;
+using BookStore.DataAccess.Repository.IRepository;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BulkyBook.DataAccess.Repository
+namespace BookStore.DataAccess.Repository
 {
     public class SP_Call : ISP_Call
     {

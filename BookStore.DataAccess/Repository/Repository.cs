@@ -1,5 +1,5 @@
-﻿using BulkyBook.DataAccess.Data;
-using BulkyBook.DataAccess.Repository.IRepository;
+﻿using Bookstore.DataAccess.Repository.IRepository;
+using BookStore.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace BulkyBook.DataAccess.Repository
+namespace BookStore.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -44,7 +44,7 @@ namespace BulkyBook.DataAccess.Repository
             {
                 foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    query = query.Include(includeProp);
+                    query = query.Include(includeProp); //add queries to other tables as well
                 }
             }
 

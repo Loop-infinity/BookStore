@@ -1,0 +1,98 @@
+﻿@model BookStore.Models.ViewModels.ProductViewModel;
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+
+
+<div class="container m-5">
+
+    <form method="POST" asp-action="Upsert" enctype="multipart/form-data" class="container border rounded p-5 mx-auto" style="width: 60%;">
+
+        @if (Model.Product != null)
+        {
+            <input asp-for="@Model.Product.Id" type="hidden">
+        }
+        
+
+        <div class="form-group row ">
+            <div class="col-3">
+                <label class="col-form-label">Name</label>
+            </div>
+            <div class="col-8">
+                <input asp-for="@Model.Product.Name" type="text" class="form-control">
+            </div> <br>
+            <span asp-validation-for="@Model.Product.Name" class="text-danger"></span> <br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">ISBN</label>
+            </div>
+            <div class="col-8">
+                <input asp-for="@Model.Product.ISBN" type="text" class="form-control">
+            </div> <br>
+            <span asp-validation-for="@Model.Product.ISBN" class="text-danger"></span><br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">Author</label>
+            </div> 
+            <div class="col-8">
+                <input asp-for="@Model.Product.Author" type="text" class="form-control">
+            </div> <br>
+            <span asp-validation-for="@Model.Product.Author" class="text-danger"></span><br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">Price</label>
+            </div>
+            <div class="col-8">
+                <input asp-for="@Model.Product.Price" type="text" class="form-control">
+            </div><br>
+            <span asp-validation-for="@Model.Product.Price" class="text-danger"></span><br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">List Price</label>
+            </div>
+            <div class="col-8">
+                <input asp-for="@Model.Product.ListPrice" type="text" class="form-control">
+            </div><br>
+            <span asp-validation-for="@Model.Product.ListPrice" class="text-danger"></span><br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">Image</label>
+            </div>
+            <div class="col-8">
+                <input name="imageFile" type="file" class="">
+            </div><br>
+            <span class="text-danger"></span><br><br>
+
+            <div class="col-3">
+                <label class="col-form-label">Category</label>
+            </div>
+            <div class="col-8">
+                <select asp-for="@Model.Product.CategoryId" asp-items="@Model.Categories" class="form-control">
+                  
+                    
+                </select>
+            </div><br>
+            <span asp-validation-for="@Model.Product.CategoryId" class="text-danger"></span><br><br>
+        </div>
+
+
+
+        <div class="form-group row mt-4">
+            <div class="col-4 offset-3">
+                <input type="submit" class="btn btn-outline-success form-control" value="Upsert" />
+            </div>
+            <div class="col-4">
+                <a asp-page="/Admin/Product/Index" class="btn btn-outline-danger form-control">Back to Products List</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+@section Scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>/>
+}

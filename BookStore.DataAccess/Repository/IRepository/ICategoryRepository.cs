@@ -1,9 +1,10 @@
-﻿using BulkyBook.Models;
+﻿using Bookstore.DataAccess.Repository.IRepository;
+using BookStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace BookStore.DataAccess.Repository.IRepository
 {
     public interface ICategoryRepository : IRepository<Category>
     {
