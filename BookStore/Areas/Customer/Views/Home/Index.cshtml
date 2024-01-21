@@ -5,14 +5,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to the best Book Store in the world</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
 <div class="d-flex flex-wrap justify-content-center">
     @foreach (var product in Model)
     {
         <div class="card m-4" style="width: 18rem;">
-            <img class="card-img-top" src="@product.ImageUrl" alt="@product.Name">
+            <img class="card-img-top" style="height: 28rem" src="@product.ImageUrl" alt="@product.Name">
             <div class="card-body">
                 <h5 class="card-title">@product.Name</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
