@@ -34,21 +34,27 @@ namespace BookStore.Areas.Admin.Controllers
             return Json(categories);
         }
 
-        public IActionResult Upsert(int ?id)
+        public IActionResult Upsert(int? id)
         {
-            Category category = new Category();
-            //add new book
-            if (id == null)
+            try
             {
-                return View();
+                Category category = new Category();
+                //add new book
+                if (id == null)
+                {
+                    return View();
+                }
+
+                //edit book
+                if (id != null)
+                {
+                    category = _unitOfWork.Category.Get((int)id);
+                    return View(category);
+                }
             }
-
-            //edit book
-
-            if(id !=  null)
+            catch (Exception)
             {
-                category = _unitOfWork.Category.Get((int)id);
-                return View(category);
+                return StatusCode(500);
             }
 
             return NotFound();
